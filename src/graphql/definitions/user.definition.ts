@@ -1,18 +1,24 @@
 import { gql } from 'apollo-server';
 
 export = gql`
-  type User {
-    username: String!
-    password:String!
-    name: String!
-    age: Int!
+
+  enum UserEnum {
+    USER
+    ADMIN
   }
 
+  type User {
+    name: String
+    username: String
+    password: String
+    email: String
+    type: UserEnum
+  }
 
   type GetUsersResponse {
     error: Boolean!
     message: String!
-    users: [User!]!
+    users: [User]
   }
 
   type CreateUserResponse {
@@ -20,10 +26,34 @@ export = gql`
     message: String!
   }
 
+  type UpdateUserResponse {
+    error: Boolean!
+    message: String!
+  }
+
+  type DeleteUserResponse {
+    error: Boolean!
+    message: String!
+  }
+
   input CreateUserInput {
-    username: String!
-    password:String!
     name: String!
-    age: Int!
+    username: String!
+    password: String!
+    email: String!
+    type: UserEnum!
+  }
+
+  input UpdateUserInput {
+    _id: ID!
+    name: String
+    username: String
+    password: String
+    email: String
+    type: UserEnum
+  }
+
+  input DeleteUserInput {
+    _id: ID!
   }
 `;

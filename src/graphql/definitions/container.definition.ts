@@ -7,5 +7,7 @@ export = gql`
 
   type Mutation {
     createUser(input: CreateUserInput): CreateUserResponse
+    updateUser(input: UpdateUserInput): UpdateUserResponse
+    deleteUser(input: DeleteUserInput): DeleteUserResponse
   }
 `;

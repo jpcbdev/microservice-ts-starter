@@ -2,9 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "/src/ap.js",
+  "main": "/dist/app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node dist/app.js",
+    "start": "tsc && cross-env NODE_ENV=production node dist/app.js",
     "start:dev": "cross-env NODE_ENV=development && ts-node-dev --respawn --transpileOnly ./src/app.ts",
     "build": "tsc"
   },

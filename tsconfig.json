@@ -10,12 +10,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "esModuleInterop": true,
-    "paths": {
-      "#root/*": [
-        "./src/*"
-      ]
-    }
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules",
